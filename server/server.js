@@ -19,9 +19,6 @@ app.use(morgan('tiny'))
 app.use('/', serveStatic(path.join(__dirname, '/dist')))
 app.use('/api/products', productsRoutes)
 app.use('/api/cart', cartRoutes)
-app.get(/.*/, function (req, res) {
-    res.sendFile(path.join(__dirname, '/dist/index.html'))
-})
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
